@@ -1,0 +1,15 @@
+.main{
+    background-color: palegoldenrod;
+    width: 90%;
+   margin: auto;
+   padding: 20px;
+    border-radius: 5px;
+   
+}
+h1{
+    text-align: center;
+     margin  : 20px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
