@@ -36,47 +36,69 @@ function FormComponent() {
     setDetails(userForm)
   }
   return (
-    <>
-      <h1>FORM</h1>
-      <Form action="" onSubmit={handleSubmit} className='main'>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter name" name='name' onChange={handleChange} />
-          </Form.Group>
+  <div className="container mt-5">
+  <div className="row shadow-lg p-4 rounded bg-white">
 
-          <Form.Group as={Col} controlId="formGridfather's name">
-            <Form.Label>Father's Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter father's name" name='fathername' onChange={handleChange} />
-          </Form.Group>
-          <Row className="mb-3"></Row>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} />
-          </Form.Group>
+    {/* LEFT SIDE */}
+    <div className="col-md-5 d-flex flex-column justify-content-center border-end">
+      <h2 className="mb-3 fw-bold">Let’s discuss something cool together ✨</h2>
+      <p className="text-muted">Feel free to contact me anytime</p>
 
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name='password' onChange={handleChange} />
-          </Form.Group>
-        </Row>
+      <div className="mt-4">
+        <p><strong>Email:</strong> SaulDesign@gmail.com</p>
+        <p><strong>Phone:</strong> +123 456 789</p>
+        <p><strong>Address:</strong> 123 Street 456 House</p>
+      </div>
+    </div>
 
-        <Form.Group className="mb-3" controlId="formGridAddress1">
-          <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" name='address' onChange={handleChange} />
-        </Form.Group>
+    {/* RIGHT SIDE - FORM */}
+    <div className="col-md-7">
+      <form onSubmit={handleSubmit}>
 
+        <div className="row">
+          <div className="col-md-6 mb-3">
+            <label className="form-label">Name</label>
+            <input type="text" className="form-control custom-input" name="name" onChange={handleChange} />
+          </div>
 
+          <div className="col-md-6 mb-3">
+            <label className="form-label">Father's Name</label>
+            <input type="text" className="form-control custom-input" name="fathername" onChange={handleChange} />
+          </div>
+        </div>
 
-        <Form.Group className="mb-3" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+        <div className="row">
+          <div className="col-md-6 mb-3">
+            <label className="form-label">Email</label>
+            <input type="email" className="form-control custom-input" name="email" onChange={handleChange} />
+          </div>
 
-        <Button variant="primary" type="submit" >
+          <div className="col-md-6 mb-3">
+            <label className="form-label">Password</label>
+            <input type="password" className="form-control custom-input" name="password" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Address</label>
+          <input type="text" className="form-control custom-input" name="address" onChange={handleChange} />
+        </div>
+
+        <div className="form-check mb-3">
+          <input type="checkbox" className="form-check-input" />
+          <label className="form-check-label">Agree to terms</label>
+        </div>
+
+        <button type="submit" className="btn btn-dark w-100 custom-btn">
           Submit
-        </Button>
+        </button>
 
-      </Form>
+      </form>
+    </div>
+
+  </div>
+
+      
       {
         Details && (
           <div>
@@ -90,10 +112,16 @@ function FormComponent() {
           </div>
         )
       }
-    </>
+      
+    </div>
+    
+  
   );
+  
 }
 
 export default FormComponent;
+
+
 
 
